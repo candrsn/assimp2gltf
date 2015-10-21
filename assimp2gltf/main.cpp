@@ -15,8 +15,6 @@ Licensed under a 3-clause BSD license. See the LICENSE file for more information
 
 #include <iostream>
 
-#include "version.h"
-
 // json_exporter.cpp
 extern Assimp::Exporter::ExportFormatEntry Assimp2Json_desc;
 
@@ -28,7 +26,7 @@ int unrecog_exit(int ex = -1)
 
 void printver() 
 {
-	std::cout << "assimp2json v" << ASSIMP2JSON_VERSION_MAJOR << "." << ASSIMP2JSON_VERSION_MINOR << "\n";
+	std::cout << "assimp2json " << __DATE__ << "." << __TIME__ << "\n";
 	std::cout << "(c) 2013, Alexander C. Gessler\nThis is free software, made available under a 3-clause BSD license\n" <<
 		"(assimp version: " 
 		<< aiGetVersionMajor() << "." 
