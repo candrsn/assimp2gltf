@@ -57,4 +57,13 @@ solution "assimp2gltf"
         defines {
             "OPENDDLPARSER_BUILD",
             "ASSIMP_BUILD_NO_C4D_IMPORTER",
+            "ASSIMP_BUILD_NO_COLLADA_EXPORTER",
+            "ASSIMP_BUILD_NO_XFILE_EXPORTER",
+            "ASSIMP_BUILD_NO_STEP_EXPORTER",
+            -- "ASSIMP_BUILD_NO_OBJ_EXPORTER",
+            "ASSIMP_BUILD_NO_STL_EXPORTER",
+            "ASSIMP_BUILD_NO_PLY_EXPORTER",
+            "ASSIMP_BUILD_NO_3DS_EXPORTER",
+            "ASSIMP_BUILD_NO_ASSBIN_EXPORTER",
+            "ASSIMP_BUILD_NO_ASSXML_EXPORTER",
         }
