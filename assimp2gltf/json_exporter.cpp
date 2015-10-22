@@ -49,7 +49,7 @@ namespace {
 
 using namespace rapidjson;
 
-void Write(Writer<StringBuffer>& out, const aiVector3D& ai) 
+void Write(PrettyWriter<StringBuffer>& out, const aiVector3D& ai) 
 {
 	out.StartArray();
     out.Double(ai.x);
@@ -58,7 +58,7 @@ void Write(Writer<StringBuffer>& out, const aiVector3D& ai)
 	out.EndArray();
 }
 
-void Write(Writer<StringBuffer>& out, const aiQuaternion& ai) 
+void Write(PrettyWriter<StringBuffer>& out, const aiQuaternion& ai) 
 {
 	out.StartArray();
     out.Double(ai.w);
@@ -68,7 +68,7 @@ void Write(Writer<StringBuffer>& out, const aiQuaternion& ai)
 	out.EndArray();
 }
 
-void Write(Writer<StringBuffer>& out, const aiColor3D& ai) 
+void Write(PrettyWriter<StringBuffer>& out, const aiColor3D& ai) 
 {
 	out.StartArray();
     out.Double(ai.r);
@@ -77,7 +77,7 @@ void Write(Writer<StringBuffer>& out, const aiColor3D& ai)
 	out.EndArray();
 }
 
-void Write(Writer<StringBuffer>& out, const aiMatrix4x4& ai) 
+void Write(PrettyWriter<StringBuffer>& out, const aiMatrix4x4& ai) 
 {
 	out.StartArray();
 	for(unsigned int x = 0; x < 4; ++x) {
@@ -88,7 +88,7 @@ void Write(Writer<StringBuffer>& out, const aiMatrix4x4& ai)
 	out.EndArray();
 }
 
-void Write(Writer<StringBuffer>& out, const aiBone& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiBone& ai)
 {
 	out.StartObject();
 
@@ -111,7 +111,7 @@ void Write(Writer<StringBuffer>& out, const aiBone& ai)
 }
 
 
-void Write(Writer<StringBuffer>& out, const aiFace& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiFace& ai)
 {
 	out.StartArray();
 	for(unsigned int i = 0; i < ai.mNumIndices; ++i) {
@@ -121,7 +121,7 @@ void Write(Writer<StringBuffer>& out, const aiFace& ai)
 }
 
 
-void Write(Writer<StringBuffer>& out, const aiMesh& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiMesh& ai)
 {
 	out.StartObject(); 
 
@@ -237,7 +237,7 @@ void Write(Writer<StringBuffer>& out, const aiMesh& ai)
 }
 
 
-void Write(Writer<StringBuffer>& out, const aiNode& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiNode& ai)
 {
 	out.StartObject();
 
@@ -268,7 +268,7 @@ void Write(Writer<StringBuffer>& out, const aiNode& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiMaterial& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiMaterial& ai)
 {
 	out.StartObject();
 
@@ -339,7 +339,7 @@ void Write(Writer<StringBuffer>& out, const aiMaterial& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiTexture& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiTexture& ai)
 {
 	out.StartObject();
 
@@ -377,7 +377,7 @@ void Write(Writer<StringBuffer>& out, const aiTexture& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiLight& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiLight& ai)
 {
 	out.StartObject();
 
@@ -427,7 +427,7 @@ void Write(Writer<StringBuffer>& out, const aiLight& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiNodeAnim& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiNodeAnim& ai)
 {
 	out.StartObject();
 
@@ -481,7 +481,7 @@ void Write(Writer<StringBuffer>& out, const aiNodeAnim& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiAnimation& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiAnimation& ai)
 {
 	out.StartObject();
 
@@ -503,7 +503,7 @@ void Write(Writer<StringBuffer>& out, const aiAnimation& ai)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiCamera& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiCamera& ai)
 {
     out.Key(ai.mName.C_Str());
 
@@ -545,7 +545,7 @@ void Write(Writer<StringBuffer>& out, const aiCamera& ai)
     }
 }
 
-void WriteFormatInfo(Writer<StringBuffer>& out)
+void WriteFormatInfo(PrettyWriter<StringBuffer>& out)
 {
 	out.StartObject();
 	out.Key("format");
@@ -555,7 +555,7 @@ void WriteFormatInfo(Writer<StringBuffer>& out)
 	out.EndObject();
 }
 
-void Write(Writer<StringBuffer>& out, const aiScene& ai)
+void Write(PrettyWriter<StringBuffer>& out, const aiScene& ai)
 {
 	out.StartObject();
 
