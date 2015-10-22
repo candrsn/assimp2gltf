@@ -18,23 +18,23 @@ $ assimp2gltf [flags] input_file [output_file]
 ```
 
 ### To do
-- [] animations
-- [] asset
-- [] shaders
-- [] accessors
-- [] bufferViews
-- [] buffers
-- [] textures
-- [] samplers
-- [] images
-- [] materials
-- [] techniques
-- [] nodes
+- [ ] animations
+- [ ] asset
+- [ ] shaders
+- [ ] accessors
+- [ ] bufferViews
+- [ ] buffers
+- [ ] textures
+- [ ] samplers
+- [ ] images
+- [ ] materials
+- [ ] techniques
+- [ ] nodes
 - [x] cameras
-- [] lights
-- [] scenes
-- [] meshes
-- [] skins
-- [] scene
+- [ ] lights
+- [ ] scenes
+- [ ] meshes
+- [ ] skins
+- [ ] scene
 
 Invoke `assimp2gltf` with no arguments for detailed information.
