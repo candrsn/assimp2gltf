@@ -1,6 +1,7 @@
 /*
-Assimp2Json
+assimp2gltf
 Copyright (c) 2011, Alexander C. Gessler
+Copyright (c) 2015, Vinjn Zhang
 
 Licensed under a 3-clause BSD license. See the LICENSE file for more information.
 

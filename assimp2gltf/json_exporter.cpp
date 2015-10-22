@@ -1,6 +1,7 @@
 /*
-Assimp2Json
+assimp2gltf
 Copyright (c) 2011, Alexander C. Gessler
+Copyright (c) 2015, Vinjn Zhang
 
 Licensed under a 3-clause BSD license. See the LICENSE file for more information.
 
@@ -30,14 +31,14 @@ extern "C" {
 }
 
 namespace {
-void Assimp2Json(const char*, Assimp::IOSystem*, const aiScene*, const Assimp::ExportProperties*);
+void assimp2gltf(const char*, Assimp::IOSystem*, const aiScene*, const Assimp::ExportProperties*);
 }
 
-Assimp::Exporter::ExportFormatEntry Assimp2Json_desc = Assimp::Exporter::ExportFormatEntry(
-	"assimp.json",
-	"Plain JSON representation of the Assimp scene data structure",
-	"assimp.json",
-	Assimp2Json,
+Assimp::Exporter::ExportFormatEntry assimp2gltf_desc = Assimp::Exporter::ExportFormatEntry(
+	"assimp.gltf",
+	"glTF representation of the Assimp scene data structure",
+	"assimp.gltf",
+	assimp2gltf,
 	0u);
 
 namespace {
@@ -744,7 +745,7 @@ void WriteFormatInfo(JSONWriter& out)
 {
 	out.StartObj();
 	out.Key("format");
-	out.SimpleValue("\"assimp2json\"");
+	out.SimpleValue("\"assimp2gltf\"");
 	out.Key("version");
 	out.SimpleValue(CURRENT_FORMAT_VERSION);
 	out.EndObj();
@@ -820,7 +821,7 @@ void Write(JSONWriter& out, const aiScene& ai)
 }
 
 
-void Assimp2Json(const char* file, Assimp::IOSystem* io, const aiScene* scene, const Assimp::ExportProperties*) 
+void assimp2gltf(const char* file, Assimp::IOSystem* io, const aiScene* scene, const Assimp::ExportProperties*) 
 {
 	boost::scoped_ptr<Assimp::IOStream> str(io->Open(file,"wt"));
 	if(!str) {

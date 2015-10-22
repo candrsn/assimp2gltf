@@ -13,6 +13,10 @@ solution "assimp2gltf"
     configuration "vs*"
         defines { "_CRT_SECURE_NO_WARNINGS" }
 
+    flags {
+        "MultiProcessorCompile"
+    }
+
     configuration "Debug"
         targetdir ("bin")
         defines { "DEBUG" }
@@ -31,6 +35,7 @@ solution "assimp2gltf"
             "3rdparty/assimp/contrib/zlib",
             "3rdparty/assimp/contrib/openddlparser/include",
             "3rdparty/assimp/contrib/clipper",
+            "3rdparty/assimp/contrib/unzip",
         }
         files { 
             "assimp2gltf/*",
@@ -41,6 +46,10 @@ solution "assimp2gltf"
             "3rdparty/assimp/contrib/clipper/*",
             "3rdparty/assimp/contrib/openddlparser/code/*",
             "3rdparty/assimp/contrib/openddlparser/include/*",
+            "3rdparty/assimp/contrib/unzip/*",
+            "3rdparty/assimp/contrib/poly2tri/poly2tri/common/*",
+            "3rdparty/assimp/contrib/poly2tri/poly2tri/sweep/*",
+            "3rdparty/assimp/contrib/ConvertUTF/*",
         }
 
         defines {

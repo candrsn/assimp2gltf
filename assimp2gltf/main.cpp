@@ -1,6 +1,7 @@
 /*
-Assimp2Json
+assimp2gltf
 Copyright (c) 2011, Alexander C. Gessler
+Copyright (c) 2015, Vinjn Zhang
 
 Licensed under a 3-clause BSD license. See the LICENSE file for more information.
 
@@ -16,17 +17,17 @@ Licensed under a 3-clause BSD license. See the LICENSE file for more information
 #include <iostream>
 
 // json_exporter.cpp
-extern Assimp::Exporter::ExportFormatEntry Assimp2Json_desc;
+extern Assimp::Exporter::ExportFormatEntry assimp2gltf_desc;
 
 int unrecog_exit(int ex = -1)
 {
-	std::cout << "usage: assimp2json [--log --verbose] input [output]" << std::endl;
+	std::cout << "usage: assimp2gltf [--log --verbose] input [output]" << std::endl;
 	return ex;
 }
 
 void printver() 
 {
-	std::cout << "assimp2json " << __DATE__ << "." << __TIME__ << "\n";
+	std::cout << "assimp2gltf " << __DATE__ << "." << __TIME__ << "\n";
 	std::cout << "(c) 2013, Alexander C. Gessler\nThis is free software, made available under a 3-clause BSD license\n" <<
 		"(assimp version: " 
 		<< aiGetVersionMajor() << "." 
@@ -83,17 +84,17 @@ int main (int argc, char *argv[])
 	}
 
 	Assimp::Exporter exp;
-	exp.RegisterExporter(Assimp2Json_desc);
+	exp.RegisterExporter(assimp2gltf_desc);
 
 	if(out) {
-		if(aiReturn_SUCCESS != exp.Export(sc,"assimp.json",out)) {
+		if(aiReturn_SUCCESS != exp.Export(sc,"assimp.gltf",out)) {
 			std::cerr << "failure exporting file: " << out << ": " << exp.GetErrorString() << std::endl;
 			return -4;
 		}
 	}
 	else {
 		// write to stdout, but we might do better than using ExportToBlob()
-		const aiExportDataBlob* const blob = exp.ExportToBlob(sc,"assimp.json");
+		const aiExportDataBlob* const blob = exp.ExportToBlob(sc,"assimp.gltf");
 		if(!blob) {
 			std::cerr << "failure exporting to (stdout) " << exp.GetErrorString() << std::endl;
 			return -5;
